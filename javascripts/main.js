@@ -117,8 +117,7 @@ angular.module('joshgameApp')
                     };
             $scope.lumberjackAnimation = $scope.animations.lumberjackAll[0];
 
-            $scope.init = function () {
-                $scope.createWebSocket();
+            $scope.init = function () {                
                 Crafty.init(800, 600);
                 Crafty.canvas.init("sample");
                 Crafty.c("Hero", {
