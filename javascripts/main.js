@@ -145,14 +145,14 @@ angular.module('joshgameApp')
                         return this;
                     }
                 });
-                Crafty.sprite(128, "/assets/app/images/lumberjack128.png",
+                Crafty.sprite(128, "images/lumberjack128.png",
                         {lumberjack128: [0, 0]});
-                Crafty.sprite(96, "/assets/app/images/lumberjack96.png",
+                Crafty.sprite(96, "images/lumberjack96.png",
                         {lumberjack96: [0, 0]});
-                Crafty.sprite(128, "/assets/app/images/trees.png",
+                Crafty.sprite(128, "images/trees.png",
                         {tree: [1, 1]});
 //                var Player = Crafty.e("Hero").attr({x:10, y:10});
-                Crafty.sprite(96, "/assets/app/images/greenKnight.PNG",
+                Crafty.sprite(96, "images/greenKnight.PNG",
                         {knight: [0, 25]});
                 var startX = ($scope.width / 2) - ($scope.heroWidth / 2);
                 var startY = ($scope.height / 2) - ($scope.heroHeight / 2);
