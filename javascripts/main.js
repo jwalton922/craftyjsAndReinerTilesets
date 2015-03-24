@@ -6,8 +6,12 @@
  * # MainCtrl
  * Controller of the joshgameApp
  */
-angular.module('joshgameApp')
-        .controller('MainCtrl', function ($scope, $log) {            
+var mod = angular
+  .module('joshgameApp', [
+
+  ]);
+  
+mod.controller('MainCtrl', function ($scope, $log) {            
             $scope.directionList = ["e", "n", "ne", "nw", "s", "se", "sw", "w"];
             $scope.lumberjackDirection = $scope.directionList[0];
             $scope.width = 800;
