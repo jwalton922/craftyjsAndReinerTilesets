@@ -76,9 +76,9 @@
                     <div data-ng-app="joshgameApp" data-ng-controller="MainCtrl" data-ng-init="init()">
                         <h3>Lumberjack Controls</h3>
                         <!--          <select data-ng-model="lumberjackAnimation128" data-ng-options="info.action for info in animations.lumberjack128"></select>-->
-                        <select data-ng-model="lumberjackAnimation" data-ng-options="info.action for info in animations.lumberjackAll"></select>
-                        <select data-ng-model="lumberjackDirection" data-ng-options="dir for dir in directionList"></select>
-                        <button data-ng-click="changeLumberjackAnimation()">Change Animation</button>
+                        <select data-ng-change="changeLumberjackAnimation()" data-ng-model="lumberjackAnimation" data-ng-options="info.action for info in animations.lumberjackAll"></select>
+                        <select data-ng-change="changeLumberjackAnimation()" data-ng-model="lumberjackDirection" data-ng-options="dir for dir in directionList"></select>
+<!--                        <button data-ng-click="changeLumberjackAnimation()">Change Animation</button>-->
                          <div id='sample'></div>
                     </div>
                    

@@ -7,12 +7,11 @@
  * Controller of the joshgameApp
  */
 var mod = angular
-  .module('joshgameApp', [
+        .module('joshgameApp', [
+        ]);
 
-  ]);
-  
 angular.module('joshgameApp')
-        .controller('MainCtrl', function ($scope, $log) {            
+        .controller('MainCtrl', function ($scope, $log) {
             $scope.directionList = ["e", "n", "ne", "nw", "s", "se", "sw", "w"];
             $scope.lumberjackDirection = $scope.directionList[0];
             $scope.width = 800;
@@ -117,7 +116,7 @@ angular.module('joshgameApp')
                     };
             $scope.lumberjackAnimation = $scope.animations.lumberjackAll[0];
 
-            $scope.init = function () {                
+            $scope.init = function () {
                 Crafty.init(800, 600);
                 Crafty.canvas.init("sample");
                 Crafty.c("Hero", {
@@ -224,12 +223,17 @@ angular.module('joshgameApp')
                 $log.log("Selected animation is: " + angular.toJson($scope.lumberjackAnimation));
                 var action = $scope.lumberjackAnimation.action + "_" + $scope.lumberjackDirection
                 $log.log("Setting lumberjack animation to: " + action);
-                if($scope.lumberjackAnimation.size === 96){
+                if ($scope.lumberjackAnimation.size === 96) {
                     $log.log("Toggling to 96 sprite component");
-                    $scope.lumberjack128.toggleComponent("lumberjack128", "lumberjack96");
+                    if ($scope.lumberjack128.has("lumberjack128")) {
+                        $scope.lumberjack128.toggleComponent("lumberjack128", "lumberjack96");
+                    }
+
                 } else {
                     $log.log("Toggling to 128 sprite component");
-                    $scope.lumberjack128.toggleComponent("lumberjack96", "lumberjack128");
+                    if ($scope.lumberjack128.has("lumberjack96")) {
+                        $scope.lumberjack128.toggleComponent("lumberjack96", "lumberjack128");
+                    }
                 }
                 $scope.lumberjack128.animate(action, -1);
             }
