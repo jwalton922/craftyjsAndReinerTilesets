@@ -213,7 +213,7 @@ angular.module('joshgameApp')
                         }).CharAnims($scope.animations.knight);
                 Crafty.viewport.follow($scope.player2, 0, 0);
 
-                $scope.lumberjack128 = Crafty.e("SpriteAnimation, CharAnims, 2D, Canvas")
+                $scope.lumberjack128 = Crafty.e("lumberjack96, SpriteAnimation, CharAnims, 2D, Canvas")
                         .attr({w: 128, h: 128, x: 300, y: 400})
                         .CharAnims($scope.animations.lumberjack128)
                         .CharAnims($scope.animations.lumberjack96);
