@@ -115,7 +115,19 @@ angular.module('joshgameApp')
                         ]
                     };
             $scope.lumberjackAnimation = $scope.animations.lumberjackAll[0];
+            $scope.initDisqus = function(){
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'jwalton922';
 
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
             $scope.init = function () {
                 Crafty.init(800, 600);
                 Crafty.canvas.init("sample");
@@ -217,6 +229,8 @@ angular.module('joshgameApp')
                         .CharAnims($scope.animations.lumberjack128)
                         .CharAnims($scope.animations.lumberjack96);
                 $scope.lumberjack128.animate($scope.lumberjackAnimation.action + "_" + $scope.lumberjackDirection, -1);
+                
+                $scope.initDisqus();
             };
 
             $scope.changeLumberjackAnimation = function () {
